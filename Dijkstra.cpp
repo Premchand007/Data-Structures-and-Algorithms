@@ -20,12 +20,15 @@ void bfs(int src) {
 	dist[src] = 0;
 
 	int u;
+
 	while(!s.empty()) {
+        
 		pair<int, int> tmp = *(s.begin());
 		s.erase(s.begin());
 		
 		u = tmp.second;
 		if(u == n) break;
+
 		for(auto i : adj[u]) {
 			int v = i.first, wt = i.second;
 			
@@ -35,15 +38,21 @@ void bfs(int src) {
 				s.insert({dist[v], v});
 				pre[v] = u;
 			}
+
 		}
+
 	}
+
 	if(pre[u] || u == src) {
 		while(u) {
 			res.push_back(u);
 			u = pre[u];
 		}
 	}
+
 }
+
+
 int32_t main() 
 { 
 	ios_base::sync_with_stdio(0);
@@ -63,6 +72,7 @@ int32_t main()
 	bfs(1);
 	
 	if(dist[n] == inf) return cout << -1 << endl, 0;
+
 	for(int i = res.size() - 1; i >= 0; --i) cout << res[i] << " ";
 	cout << endl;
 }
