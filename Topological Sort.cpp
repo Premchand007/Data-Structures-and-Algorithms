@@ -6,7 +6,7 @@ vertex u comes before v in the ordering.
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> adj[10000];
+vector<int> adj[10000]; // Adjacency List
 vector<bool> visited;
 vector<int> ans;
 
