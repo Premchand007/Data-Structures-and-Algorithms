@@ -15,7 +15,8 @@ void dfs(int u) {
     for(int v : adj[u]) {
         if(!visited[v]) dfs(v);
     }
-    ans.push_back(u);
+    ans.push_back(u); 
+    // u is added to the list after all outgoing vertices from u are added to list.
 }
 
 void topological_sort(int n) {
@@ -31,7 +32,7 @@ void topological_sort(int n) {
 int main() {
 
     int n, m;
-    cin >> n >> m;
+    cin >> n >> m; // n vertices, m edges
 
     while(m--) {
         int a, b;
